@@ -43,6 +43,8 @@ import MonthlyReportContainer from '../module/reports/monthlyreport.container';
 import ScansMissingFilesContainer from '../scans/scansMissingFiles.container';
 import HomeContainer from '../module/pages/home.container';
 import logo from '../../Logo/tagama-png.png';
+import aboutUsContainer from '../module/pages/aboutUs.container';
+import contactContainer from '../module/pages/contact.container';
 
 
 
@@ -53,7 +55,6 @@ class MainLayout extends React.Component {
     };
 
     render() {
-        console.log(this.props.loading);
         return (
             <div>
                 <div>
@@ -95,10 +96,13 @@ class MainLayout extends React.Component {
                         {this.props.loading == true ? <LinearProgress  color="primary"/> :
                             <div style={{ height: 10+ 'px' }}></div>}
 
-                        <Route path="/" component={HomeContainer}/>
                         <Route path="/home" component={HomeContainer}/>
-                        <Route path="/app/dashboard" component={dashboardContainer} />
+                        <Route path="/about_us" component={aboutUsContainer}/>
+                        <Route path="/contact" component={contactContainer}/>
 
+
+
+                        <Route path="/dashboard" component={dashboardContainer} />
                         <Route path="/app/users" component={Users} />
                         <Route path="/app/users/update/:id" component={UpdateUserContainer} />
                         <Route path="/app/users/delete/:id" component={DeleteUserContainer} />

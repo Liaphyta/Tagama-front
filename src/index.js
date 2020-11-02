@@ -21,6 +21,7 @@ import {privilegesReducer} from './app/module/privileges/privileges.reducer';
 import {dashboardSagas} from './app/module/dashboard/dashboard.saga';
 import {dashboardReducer} from './app/module/dashboard/dashboard.reducer';
 import { getCurrentAccessToken } from './app/shared/app.properties';
+import HomeContainer from './app/module/pages/home.container';
 
 
 const appReducer = combineReducers({
@@ -95,8 +96,10 @@ class App extends React.Component {
                 <Router>
                     <div>
                         {/*<Route path="/login" component={LoginContainer}/>*/}
-                        <Route path="/app" component={MainLayout}/>
-                        <Route exact path="/" component={MainLayout}/> 
+                        {/* <Route path="/app" component={MainLayout}/> */}
+                        <Route  path="/" component={MainLayout}/> 
+                        <Route path ="/home" component={HomeContainer}/>
+
                         {/* <Route path="/error"  /> */}
                     </div>
                 </Router>

@@ -106,7 +106,7 @@ export default class HomeContainer extends React.Component {
             <div style={{ backgroundImage:`url(${backgroundPic})`,height:'80vh',backgroundRepeat:'no-repeat',backgroundSize: '100%',marginRight:'0px',
                         textAlign: 'center'}}>
             <div style={{backgroundImage:`url(${cloud})`,width:'640px',height:'500px',backgroundRepeat:'no-repeat',backgroundSize: '100%',textAlign:'center',display: 'block',marginLeft:'auto',
-              marginRight:'auto',marginTop:'auto',marginBottom:'auto',paddingTop:'150px'}}>
+              marginRight:'auto',marginTop:'auto',marginBottom:'auto',paddingTop:'180px'}}>
             <Typography  variant="h5" style={{color:'white'}} ><b>Koга исхраната е исправна,</b></Typography>
             <Typography  variant="h5" style={{color:'white'}} ><b> од медицината нема потреба</b></Typography>
             <Typography  variant="h5" style={{color:'white',paddingTop:'15px'}}><b>Заедно креираме здрави навики!</b></Typography>
