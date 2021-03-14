@@ -8,6 +8,7 @@ import weightGain from '../../../Logo/weight-gain.png'
 import sports from '../../../Logo/sports.png'
 import healthy from '../../../Logo/healthy.jpg'
 import cloud from '../../../Logo/cloud1.png'
+import { Navbar } from '../../shared/Navbar';
 
 
 export default class HomeContainer extends React.Component {
@@ -37,72 +38,8 @@ export default class HomeContainer extends React.Component {
         
         return (
 
-//           <Grid container style={{backgroundColor:"white",marginTop:'100px',backgroundColor:'white',width:'100%'}}>
-//            <Grid style={{ backgroundImage:`url(${backgroundPic})`,height:'80vh',backgroundRepeat:'no-repeat',backgroundSize: '100%',marginRight:'0px',paddingTop:'330px',
-//                          textAlign: 'center'}}>
-// <Typography  variant="h5" style={{color:'orange'}} ><b>Koга исхраната е исправна, од медицината нема потреба</b></Typography>
-//              <Typography  variant="h5" style={{color:'orange'}}><b>Заедно креираме здрави навики</b></Typography>
-//              <ThemeProvider theme={this.theme}>
-//              <Link to='\contact' ><this.StyledButton style={{marginTop:'10px'}}><b>ПРИДРУЖИ СЕ</b></this.StyledButton></Link>
-//              </ThemeProvider>
-//              </Grid> 
-//              <Grid spacing={2} style={{textAlign:'center',paddingTop:'15px',backgroundColor:'white'}}>
-              
-//                 <Grid item xs={3}>  {/*slabeenje*/}
-//                <img src={weightLoss} style={{borderTopLeftRadius: '50%',borderTopRightRadius: '50%',borderBottomRightRadius: '50%',borderBottomLeftRadius: '50%'
-//                ,width:'220px',height:'200px'}} />
-//                <ThemeProvider theme={this.theme}>
-//                  <Typography variant="h5" style={{color:'orange',paddingTop:'10px'}}>Здраво Слабеење</Typography>
-//                  <Typography variant="h6" style={{color:'orange'}}>
-//                     Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  
-//                     Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф 
-//                     Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  
-//                     Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф 
-//                  </Typography>
-//                </ThemeProvider>
-//                </Grid>
-//                <Grid item xs={3}> {/*zdebeluvanje*/}
-//                <img src={weightGain} style={{borderTopLeftRadius: '50%',borderTopRightRadius: '50%',borderBottomRightRadius: '50%',borderBottomLeftRadius: '50%'
-//                ,width:'220px',height:'200px'}} />
-//                <ThemeProvider theme={this.theme}>
-//                  <Typography variant="h5" style={{color:'orange',paddingTop:'10px'}}> Здраво Здебелување</Typography>
-//                  <Typography variant="h6" style={{color:'orange'}}>
-//                     Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  
-//                     Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф 
-//                     Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  
-//                     Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф 
-//                  </Typography>
-//                </ThemeProvider>
-//                </Grid>
-//                <Grid item xs={3}> {/*sportski*/}
-//                <img src={sports} style={{borderTopLeftRadius: '50%',borderTopRightRadius: '50%',borderBottomRightRadius: '50%',borderBottomLeftRadius: '50%'
-//                ,width:'220px',height:'200px'}} />
-//                <ThemeProvider theme={this.theme}>
-//                  <Typography variant="h5" style={{color:'orange',paddingTop:'10px'}}> Режим наменет за спортисти</Typography>
-//                  <Typography variant="h6" style={{color:'orange'}}>
-//                     Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  
-//                     Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф 
-//                     Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  
-//                     Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф 
-//                  </Typography>
-//                </ThemeProvider>
-//                </Grid>
-//                <Grid item xs={3}> {/*zdravstvo*/}
-//                <img src={healthy} style={{borderTopLeftRadius: '50%',borderTopRightRadius: '50%',borderBottomRightRadius: '50%',borderBottomLeftRadius: '50%'
-//                ,width:'220px',height:'200px'}} />
-//                <ThemeProvider theme={this.theme}>
-//                  <Typography variant="h5" style={{color:'orange',paddingTop:'10px'}}>Режим за подобрување на вашето здравје</Typography>
-//                  <Typography variant="h6" style={{color:'orange'}}>
-//                     Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  
-//                     Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф 
-//                     Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  
-//                     Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф  Рандом параграф 
-//                  </Typography>
-//                </ThemeProvider>
-//                </Grid>
-//            </Grid>
-//           </Grid>
-            <div style={{marginTop:'60px',width:'100%',backgroundColor:'white'}}>
+            <div style={{marginTop:'110px',width:'100%',backgroundColor:'white'}}>
+              <Navbar></Navbar>
             <div style={{ backgroundImage:`url(${backgroundPic})`,height:'80vh',backgroundRepeat:'no-repeat',backgroundSize: '100%',marginRight:'0px',
                         textAlign: 'center'}}>
             <div style={{backgroundImage:`url(${cloud})`,width:'640px',height:'500px',backgroundRepeat:'no-repeat',backgroundSize: '100%',textAlign:'center',display: 'block',marginLeft:'auto',

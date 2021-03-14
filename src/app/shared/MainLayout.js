@@ -31,8 +31,6 @@ import AddPathFolderContainer from '../module/Folders/addPathfolder.container';
 import { authorize } from './app.properties';
 import dashboardContainer from '../module/dashboard/dashboard.container';
 import AuditContainer from './../module/audit/audit.container';
-
-import AppContainer from './../module/app/app.container';
 import UnauthorizedContainer from '../module/error/unauthorized.container';
 import ResetPasswordUserContainer from '../module/users/update.users/resetPassword.users.container';
 import SystemSettingsContainer from '../module/settings/system_settings.container';
@@ -99,9 +97,6 @@ class MainLayout extends React.Component {
                         <Route path="/home" component={HomeContainer}/>
                         <Route path="/about_us" component={aboutUsContainer}/>
                         <Route path="/contact" component={contactContainer}/>
-
-
-
                         <Route path="/dashboard" component={dashboardContainer} />
                         <Route path="/app/users" component={Users} />
                         <Route path="/app/users/update/:id" component={UpdateUserContainer} />
