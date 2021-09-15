@@ -43,6 +43,7 @@ import HomeContainer from '../module/pages/home.container';
 import logo from '../../Logo/tagama-png.png';
 import aboutUsContainer from '../module/pages/aboutUs.container';
 import contactContainer from '../module/pages/contact.container';
+import SimpleDialog from '../module/pages/SimpleDialog';
 
 
 
@@ -97,6 +98,7 @@ class MainLayout extends React.Component {
                         <Route path="/home" component={HomeContainer}/>
                         <Route path="/about_us" component={aboutUsContainer}/>
                         <Route path="/contact" component={contactContainer}/>
+                        <Route path="/done" component={SimpleDialog}/>
                         <Route path="/dashboard" component={dashboardContainer} />
                         <Route path="/app/users" component={Users} />
                         <Route path="/app/users/update/:id" component={UpdateUserContainer} />
