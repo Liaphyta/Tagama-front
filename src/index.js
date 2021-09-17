@@ -1,43 +1,43 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import MainLayout from './app/shared/MainLayout';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
+import { Provider } from 'react-redux';
+import { mainReducer } from './app/shared/MainReducer';
 import { applyMiddleware, combineReducers, createStore } from 'redux';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+
 import axios from 'axios';
 
-import createSagaMiddleware from 'redux-saga';
-import { Provider } from 'react-redux';
-import { usersReducer } from './app/module/users/users.reducer';
-import { mainReducer } from './app/shared/Main.Reducer';
-import { usersSagas } from './app/module/users/users.saga';
-import { groupsSagas } from './app/module/groups/groups.saga';
-import { groupsReducer } from './app/module/groups/groups.reducer';
-import LoginContainer from './app/auth/login/login.container';
-import { profileSagas } from './app/module/profile/profile.saga';
-import { profileReducer } from './app/module/profile/profile.reducer';
-import { privilegesSagas } from './app/module/privileges/privileges.saga';
-import { privilegesReducer } from './app/module/privileges/privileges.reducer';
-import { dashboardSagas } from './app/module/dashboard/dashboard.saga';
-import { dashboardReducer } from './app/module/dashboard/dashboard.reducer';
-import { getCurrentAccessToken } from './app/shared/app.properties';
-import HomeContainer from './app/module/pages/home.container';
-import aboutUsContainer from './app/module/pages/aboutUs.container';
-import contactContainer from './app/module/pages/contact.container';
-import SimpleDialog from './app/module/pages/SimpleDialog';
-import faqContainer from './app/module/pages/faq.container';
 
+function getCurrentAccessToken() {
+    var idm = JSON.parse(localStorage.getItem('idm'));
+    if (idm != null) {
+        return idm.access_token;
+    }
+    dispatchAction({ type: "USER_LOGOUT", payload: undefined });
+    return null;
+}
 
 const appReducer = combineReducers({
-    usersReducer,
     mainReducer,
-    groupsReducer,
-    profileReducer,
-    privilegesReducer,
-    dashboardReducer
-
 });
 
+axios.interceptors.request.use(function (config) {
+    // Do something before request is sent
+    dispatchAction({ type: 'SHOW_LOADING' });
+    console.log(config.url);
+    if (!(config.url.includes('upcomingMatches') || config.url.includes('tournaments') || config.url.includes('previousMatches') || config.url.includes('teams') || config.url.includes('create')))
+        if (!config.url.includes('access_token='))
+            if (config.url.includes('&') || config.url.includes('?'))
+                config.url = config.url + '&access_token=' + getCurrentAccessToken();
+            else
+                config.url = config.url + '?access_token=' + getCurrentAccessToken();
+    return config;
+}, function (error) {
+    // Do something with request error
+    return Promise.reject(error);
+});
 const rootReducer = (state, action) => {
     if (action.type === 'USER_LOGOUT') {
         state = undefined
@@ -45,77 +45,21 @@ const rootReducer = (state, action) => {
     return appReducer(state, action)
 }
 
+const store = createStore(
+    rootReducer
+);
+
 export function dispatchAction(action) {
     store.dispatch(action);
 }
 
-const sagaMiddleware = createSagaMiddleware();
-
-const store = createStore(
-    rootReducer,
-    applyMiddleware(sagaMiddleware)
-);
-
-sagaMiddleware.run(usersSagas);
-sagaMiddleware.run(groupsSagas);
-sagaMiddleware.run(privilegesSagas);
-sagaMiddleware.run(profileSagas);
-sagaMiddleware.run(dashboardSagas);
-
-// Add a request interceptor
-axios.interceptors.request.use(function (config) {
-    // Do something before request is sent
-    dispatchAction({ type: 'SHOW_LOADING' });
-    if (!config.url.includes('access_token='))
-        if (config.url.includes('&'))
-            config.url = config.url + '&access_token=' + getCurrentAccessToken();
-        else
-            config.url = config.url + '?access_token=' + getCurrentAccessToken();
-    return config;
-}, function (error) {
-    // Do something with request error
-    return Promise.reject(error);
-});
-
-// Add a response interceptor
-axios.interceptors.response.use(function (response) {
-    // Any status code that lie within the range of 2xx cause this function to trigger
-    // Do something with response data
-    dispatchAction({ type: 'HIDE_LOADING' });
-    return response;
-}, function (err) {
-    dispatchAction({ type: 'HIDE_LOADING' });
-    return Promise.reject(err);
-});
-
-class App extends React.Component {
-
-    componentDidMount() {
-
-    }
-
-    render() {
-        return (
-            <Provider store={store}>
-                <Router>
-                    <div>
-                        {/*<Route path="/login" component={LoginContainer}/>*/}
-                        {/* <Route path="/app" component={MainLayout}/> */}
-                        <Route path="/home" component={HomeContainer} />
-                        <Route path="/about_us" component={aboutUsContainer} />
-                        <Route path="/contact" component={contactContainer} />
-                        <Route path="/contact/done" component={SimpleDialog} />
-                        <Route path="/faq" component={faqContainer} />
-
-                        {/* <Route path="/error"  /> */}
-                    </div>
-                </Router>
-            </Provider>
-        );
-    }
-}
-
 ReactDOM.render(
-    <App />,
-    document.getElementById('root')
-);
+    <Provider store={store}>
+        <App />
+    </Provider>
+    , document.getElementById('root'));
+
+// // If you want your app to work offline and load faster, you can change
+// // unregister() to register() below. Note this comes with some pitfalls.
+// // Learn more about service workers: https://bit.ly/CRA-PWA
+// serviceWorker.unregister();

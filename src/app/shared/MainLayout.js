@@ -17,7 +17,7 @@ import { SidebarMenu } from './SidebarMenu';
 import { AppBar, Toolbar, Typography, } from "@material-ui/core";
 import Snackbar from '@material-ui/core/Snackbar';
 import MySnackbarContent from './SnackbarContentWrapper';
-import { CLEAR_NOTIFICATIONS } from './Main.Reducer';
+import { CLEAR_NOTIFICATIONS } from './MainReducer';
 import Slide from '@material-ui/core/Slide';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import createGroupsContainer from '../module/groups/create.groups/create.groups.container';
@@ -60,15 +60,15 @@ class MainLayout extends React.Component {
                     <CssBaseline />
                     <AppBar position="fixed" style={{ backgroundColor: '#f2f2f2' }}>
                         <Toolbar>
-                        <img src={logo} style={{height:"5%",width: "5%"}}/>
-                        <NavbarMain/>
-                        <NavbarRight/>
-                        
+                            <img src={logo} style={{ height: "5%", width: "5%" }} />
+                            <NavbarMain />
+                            <NavbarRight />
+
 
                         </Toolbar>
                     </AppBar>
 
-{/* 
+                    {/* 
                     <Slide direction="left" in={this.props.open} unmountOnExit>
                         <Snackbar
                             anchorOrigin={{
@@ -92,13 +92,13 @@ class MainLayout extends React.Component {
                     </Slide> */}
 
                     <main>
-                        {this.props.loading == true ? <LinearProgress  color="primary"/> :
-                            <div style={{ height: 10+ 'px' }}></div>}
+                        {this.props.loading == true ? <LinearProgress color="primary" /> :
+                            <div style={{ height: 10 + 'px' }}></div>}
 
-                        <Route path="/home" component={HomeContainer}/>
-                        <Route path="/about_us" component={aboutUsContainer}/>
-                        <Route path="/contact" component={contactContainer}/>
-                        <Route path="/done" component={SimpleDialog}/>
+                        <Route path="/home" component={HomeContainer} />
+                        <Route path="/about_us" component={aboutUsContainer} />
+                        <Route path="/contact" component={contactContainer} />
+                        <Route path="/done" component={SimpleDialog} />
                         <Route path="/dashboard" component={dashboardContainer} />
                         <Route path="/app/users" component={Users} />
                         <Route path="/app/users/update/:id" component={UpdateUserContainer} />
@@ -126,15 +126,15 @@ class MainLayout extends React.Component {
 
                         <Route path="/app/error/unauthorized" component={UnauthorizedContainer} />
 
-                        <Route path="/app/folders" component={FoldersContainer}/>
-                        <Route path="/app/folders/path/:id" component={AddPathFolderContainer}/>
+                        <Route path="/app/folders" component={FoldersContainer} />
+                        <Route path="/app/folders/path/:id" component={AddPathFolderContainer} />
 
-                        <Route path="/app/scans" component={ScansContainer}/>
-                        <Route path="/app/scans/missingFiles" component={ScansMissingFilesContainer}/>
-                        
-                        <Route path="/app/reports" component={ReportsContainer}/>
-                        <Route path="/app/reports/daily/:date" component={ReportsIndividualContainer}/>
-                        <Route path="/app/reports/generate/monthly" component={MonthlyReportContainer}/>
+                        <Route path="/app/scans" component={ScansContainer} />
+                        <Route path="/app/scans/missingFiles" component={ScansMissingFilesContainer} />
+
+                        <Route path="/app/reports" component={ReportsContainer} />
+                        <Route path="/app/reports/daily/:date" component={ReportsIndividualContainer} />
+                        <Route path="/app/reports/generate/monthly" component={MonthlyReportContainer} />
 
 
                     </main>
