@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/Tagama-front/static/css/main.fedaa02f.chunk.css",
+    "main.js": "/Tagama-front/static/js/main.0c7cbb82.chunk.js",
+    "main.js.map": "/Tagama-front/static/js/main.0c7cbb82.chunk.js.map",
+    "runtime-main.js": "/Tagama-front/static/js/runtime-main.367514c3.js",
+    "runtime-main.js.map": "/Tagama-front/static/js/runtime-main.367514c3.js.map",
+    "static/css/2.8dbaaf87.chunk.css": "/Tagama-front/static/css/2.8dbaaf87.chunk.css",
+    "static/js/2.54ccd710.chunk.js": "/Tagama-front/static/js/2.54ccd710.chunk.js",
+    "static/js/2.54ccd710.chunk.js.map": "/Tagama-front/static/js/2.54ccd710.chunk.js.map",
+    "index.html": "/Tagama-front/index.html",
+    "static/css/2.8dbaaf87.chunk.css.map": "/Tagama-front/static/css/2.8dbaaf87.chunk.css.map",
+    "static/css/main.fedaa02f.chunk.css.map": "/Tagama-front/static/css/main.fedaa02f.chunk.css.map",
+    "static/js/2.54ccd710.chunk.js.LICENSE.txt": "/Tagama-front/static/js/2.54ccd710.chunk.js.LICENSE.txt",
+    "static/media/about_us_pic.cde96a2d.jpg": "/Tagama-front/static/media/about_us_pic.cde96a2d.jpg",
+    "static/media/back.d9d7b3ca.png": "/Tagama-front/static/media/back.d9d7b3ca.png",
+    "static/media/background2.4d28ca75.png": "/Tagama-front/static/media/background2.4d28ca75.png",
+    "static/media/background3.10eb39ca.png": "/Tagama-front/static/media/background3.10eb39ca.png",
+    "static/media/card1.3cc38bd0.png": "/Tagama-front/static/media/card1.3cc38bd0.png",
+    "static/media/card2.4822faa4.png": "/Tagama-front/static/media/card2.4822faa4.png",
+    "static/media/card3.7838bc91.png": "/Tagama-front/static/media/card3.7838bc91.png",
+    "static/media/cloud1.d1562095.png": "/Tagama-front/static/media/cloud1.d1562095.png",
+    "static/media/faq_back.5b10318b.png": "/Tagama-front/static/media/faq_back.5b10318b.png",
+    "static/media/healthy-diet.b94a5c75.jpg": "/Tagama-front/static/media/healthy-diet.b94a5c75.jpg",
+    "static/media/healthy.9530642f.jpg": "/Tagama-front/static/media/healthy.9530642f.jpg",
+    "static/media/lastBackground.f052973c.png": "/Tagama-front/static/media/lastBackground.f052973c.png",
+    "static/media/left.bd7c1b5c.png": "/Tagama-front/static/media/left.bd7c1b5c.png",
+    "static/media/slika1edit.60f82879.jpg": "/Tagama-front/static/media/slika1edit.60f82879.jpg",
+    "static/media/sports.bb5e96db.png": "/Tagama-front/static/media/sports.bb5e96db.png",
+    "static/media/tagama-png.3032fa3c.png": "/Tagama-front/static/media/tagama-png.3032fa3c.png",
+    "static/media/weight-gain.8fe9249e.png": "/Tagama-front/static/media/weight-gain.8fe9249e.png",
+    "static/media/weight-loss.6787d234.png": "/Tagama-front/static/media/weight-loss.6787d234.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.367514c3.js",
+    "static/css/2.8dbaaf87.chunk.css",
+    "static/js/2.54ccd710.chunk.js",
+    "static/css/main.fedaa02f.chunk.css",
+    "static/js/main.0c7cbb82.chunk.js"
+  ]
+}
