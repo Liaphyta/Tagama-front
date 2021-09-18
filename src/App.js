@@ -178,20 +178,23 @@ class App extends React.Component {
 
     render() {
         return (
-            <Router>
+            <div>
+                <HomeContainer />
+                <Router>
 
-                {
-                    <div className="App">
-                        <HomeContainer />
-                        {/* <Route render={() => <Redirect to="/"/>} /> */}
-                        <Route path="/" exact component={HomeContainer} />
-                        <Route path="/about_us" component={aboutUsContainer} />
-                        <Route path="/contact" component={contactContainer} />
-                        <Route path="/contact/done" component={SimpleDialog} />
-                        <Route path="/faq" component={faqContainer} />
-                    </div>
-                }
-            </Router>
+                    {
+                        <div className="App">
+
+                            {/* <Route render={() => <Redirect to="/"/>} /> */}
+                            <Route path="/" exact component={HomeContainer} />
+                            <Route path="/about_us" component={aboutUsContainer} />
+                            <Route path="/contact" component={contactContainer} />
+                            <Route path="/contact/done" component={SimpleDialog} />
+                            <Route path="/faq" component={faqContainer} />
+                        </div>
+                    }
+                </Router>
+            </div>
         )
     }
 
