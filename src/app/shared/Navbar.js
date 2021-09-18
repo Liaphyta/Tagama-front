@@ -112,7 +112,7 @@ export function Navbar(props) {
                         </div>
                     </MediaQuery>
                     <MediaQuery maxDeviceWidth={1224}>
-                        <div style={{ float: 'right' }}>
+                        <div style={{ position: "absolute", right: '1%' }} className="pull-right">
                             <IconButton
                                 aria-label="more"
                                 id="long-button"
