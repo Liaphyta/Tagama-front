@@ -182,7 +182,7 @@ class App extends React.Component {
 
                 {
                     <div className="App">
-
+                        <HomeContainer />
                         {/* <Route render={() => <Redirect to="/"/>} /> */}
                         <Route path="/" exact component={HomeContainer} />
                         <Route path="/about_us" component={aboutUsContainer} />
