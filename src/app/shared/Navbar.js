@@ -59,7 +59,7 @@ export function Navbar(props) {
                         </IconButton>
                         <a href="tel:+38970332752" style={{ fontSize: '120%', color: '#6c6d6a' }}>+38970332752</a>
                     </div>
-                    <div style={{ position: "absolute", right: 25 + 'px' }} className="pull-right">
+                    <div style={{ position: "absolute", right: '1%' }} className="pull-right">
                         <div >
                             <ThemeProvider theme={theme}>
                                 <List className="listFont" style={{ display: 'flex', flexDirection: 'row', padding: 0 }}>
