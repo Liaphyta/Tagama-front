@@ -64,7 +64,7 @@ export function Navbar(props) {
                             <ThemeProvider theme={theme}>
                                 <List className="listFont" style={{ display: 'flex', flexDirection: 'row', padding: 0 }}>
                                     <ListItem>
-                                        <Link to="/home">
+                                        <Link to="/">
                                             <Button>
                                                 <Typography variant="h6" style={{ textAlign: 'center', color: "#4a4a49" }} ><b>Home</b></Typography>
                                             </Button>
