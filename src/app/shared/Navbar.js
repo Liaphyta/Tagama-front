@@ -41,7 +41,15 @@ export function Navbar(props) {
             <CssBaseline />
             <AppBar position="fixed" style={{ backgroundColor: '#ebeee7' }}>
                 <Toolbar>
-                    <img src={logo} style={{ height: "5%", width: "5%" }} />
+                    <MediaQuery minDeviceWidth={1224}>
+
+                        <img src={logo} style={{ height: "5%", width: "5%" }} />
+                    </MediaQuery>
+                    <MediaQuery maxDeviceWidth={1224}>
+
+                        <img src={logo} style={{ height: "10%", width: "10%" }} />
+                    </MediaQuery>
+
                     <div>
                         <IconButton >
                             <Badge
@@ -102,8 +110,9 @@ export function Navbar(props) {
                                 </ThemeProvider>
                             </div>
                         </div>
-                    </MediaQuery><MediaQuery maxDeviceWidth={1224}>
-                        <div>
+                    </MediaQuery>
+                    <MediaQuery maxDeviceWidth={1224}>
+                        <div style={{ float: 'right' }}>
                             <IconButton
                                 aria-label="more"
                                 id="long-button"
