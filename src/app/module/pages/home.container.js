@@ -73,20 +73,20 @@ export default class HomeContainer extends React.Component {
         </div>
 
         <div style={{ backgroundImage: `url(${backgroundSecond})`, width: '100%', height: '110vh', backgroundSize: 'cover', textAlign: 'center', paddingTop: '24%', position: 'relative' }}>
-          <Paper elevation={3} style={{ width: '310px', height: '393px', backgroundImage: `url(${cardOne})`, display: 'inline-block', marginRight: '1%' }} >
+          <Paper elevation={3} style={{ width: '310px', height: '393px', backgroundImage: `url(${cardOne})`, display: 'inline-block', marginRight: '1%', marginBottom: '1%' }} >
             <h2 className="headlines" style={{ paddingTop: '34%', color: "#4a4a49" }}>Губење на вишок килограми</h2>{/*Weight loss */}
             <Box m={2} style={{ fontSize: '18px', fontFamily: 'Open Sans,Arial,sans-serif' }}>
               Персонализиран индивидуален режим на исхрана базиран на анамнеза, крвна анализа и секојдневни индивидуални консултации.
             </Box>
           </Paper>
-          <Paper elevation={3} style={{ width: '310px', height: '393px', backgroundImage: `url(${cardTwo})`, display: 'inline-block', marginRight: '1%' }} >
+          <Paper elevation={3} style={{ width: '310px', height: '393px', backgroundImage: `url(${cardTwo})`, display: 'inline-block', marginRight: '1%', marginBottom: '1%' }} >
             <h2 className="headlines" style={{ paddingTop: '34%', color: "#4a4a49" }}>Одржување на здравје</h2> {/*Health Maintanence */}
             <Box m={2} style={{ fontSize: '18px', fontFamily: 'Open Sans,Arial,sans-serif' }}>
               Детален преглед низ здравствените проблеми со цел подобрување на целокупната здравствена состојба. Постојан индивидуален пристап кон решавање кон проблемот.
 
             </Box>
           </Paper>
-          <Paper elevation={3} style={{ width: '310px', height: '393px', backgroundImage: `url(${cardThree})`, display: 'inline-block', marginRight: '1%' }} >
+          <Paper elevation={3} style={{ width: '310px', height: '393px', backgroundImage: `url(${cardThree})`, display: 'inline-block', marginRight: '1%', marginBottom: '1%' }} >
             <h2 className="headlines" style={{ paddingTop: '32%', color: "#4a4a49" }}>Менаџмент на здрав начин на живот</h2> {/*Lifestyle Management */}
             <Box m={2} style={{ fontSize: '18px', fontFamily: 'Open Sans,Arial,sans-serif' }}>
               Промена на лошите навики кон храната со цел целокупно подобрување на начинот на живот. Со заеднички сили до посакуваното здравје и начин на живот.
