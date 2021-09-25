@@ -42,14 +42,10 @@ export function Navbar(props) {
             <AppBar position="fixed" style={{ backgroundColor: '#ebeee7' }}>
                 <Toolbar>
                     <MediaQuery minDeviceWidth={1224}>
-                        <Link to="/">
-                            <img src={logo} style={{ height: "5%", width: "5%" }} />
-                        </Link>
+                        <img src={logo} style={{ height: "5%", width: "5%" }} />
                     </MediaQuery>
                     <MediaQuery maxDeviceWidth={1224}>
-                        <Link to="/">
-                            <img src={logo} style={{ height: "10%", width: "10%" }} />
-                        </Link>
+                        <img src={logo} style={{ height: "10%", width: "10%" }} />
                     </MediaQuery>
 
                     <div>
