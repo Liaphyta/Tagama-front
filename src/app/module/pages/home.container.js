@@ -9,15 +9,19 @@ import sports from '../../../Logo/sports.png'
 import healthy from '../../../Logo/healthy.jpg'
 import cloud from '../../../Logo/cloud1.png'
 import { Navbar } from '../../shared/Navbar';
+import backgroundMobile from '../../../Logo/mobileBack.png'
 import backgroundFirst from '../../../Logo/background2.png'
 import backgroundSecond from '../../../Logo/background3.png'
-import last from '../../../Logo/lastBackground.png'
+import backgroundSecond1 from '../../../Logo/background4.png'
+import last from '../../../Logo/lastBack.png'
 import cardOne from '../../../Logo/card1.png'
 import cardTwo from '../../../Logo/card2.png'
 import cardThree from '../../../Logo/card3.png'
 import './home.css'
 import { spacing } from '@material-ui/system';
 import MailIcon from '@material-ui/icons/Mail';
+import MediaQuery from 'react-responsive';
+
 
 export default class HomeContainer extends React.Component {
 
@@ -59,20 +63,35 @@ export default class HomeContainer extends React.Component {
 
       <div style={{ marginTop: '2%', width: '100%', backgroundColor: 'white' }}>
         <Navbar></Navbar>
-        <div style={{ backgroundImage: `url(${backgroundFirst})`, width: '100%', height: '105vh', backgroundSize: 'cover', textAlign: 'center' }}>
-          <div style={{ paddingTop: '12%' }}>
-            <h2 className="first-intro" style={{ color: '#4a4a49' }}>Welcome to Tagama</h2>
-            <h2 className="first-intro-sub" style={{ color: '#4a4a49' }}>by Tanja Turundzieva</h2>
-            <h2 className="second-intro" style={{ color: '#4a4a49' }}>Maintaining healthy habits and positive lifestyle since 1995</h2>
-            <Link to="/contact">
-              <this.StyledButton className="second-intro" style={{ marginTop: '0px' }}>GET IN CONTACT</this.StyledButton>
-            </Link>
-
+        <MediaQuery minDeviceWidth={1224}>
+          <div style={{ backgroundImage: `url(${backgroundFirst})`, width: '100%', height: '105vh', backgroundSize: 'cover', textAlign: 'center' }}>
+            <div style={{ paddingTop: '12%' }}>
+              <h2 className="first-intro" style={{ color: '#4a4a49' }}>Welcome to Tagama</h2>
+              <h2 className="first-intro-sub" style={{ color: '#4a4a49' }}>by Tanja Turundzieva</h2>
+              <h2 className="second-intro" style={{ color: '#4a4a49' }}>Maintaining healthy habits and positive lifestyle since 1995</h2>
+              <Link to="/contact">
+                <this.StyledButton className="second-intro" style={{ marginTop: '0px' }}>GET IN CONTACT</this.StyledButton>
+              </Link>
+            </div>
           </div>
-
-        </div>
-
-        <div style={{ backgroundImage: `url(${backgroundSecond})`, width: '100%', height: '110vh', backgroundSize: 'cover', textAlign: 'center', paddingTop: '24%', position: 'relative' }}>
+        </MediaQuery>
+        <MediaQuery maxDeviceWidth={1224}>
+          <div style={{ backgroundImage: `url(${backgroundMobile})`, width: '100%', height: '105vh', backgroundSize: 'cover', textAlign: 'center' }}>
+            <div style={{ paddingTop: '12%', margin: window.innerWidth > 1223 ? '0%' : '3%' }}>
+              <h2 className="first-intro" style={{ color: '#4a4a49' }}>Welcome to Tagama</h2>
+              <h2 className="first-intro-sub" style={{ color: '#4a4a49' }}>by Tanja Turundzieva</h2>
+              <h2 className="second-intro" style={{ color: '#4a4a49' }}>Maintaining healthy habits and positive lifestyle since 1995</h2>
+              <Link to="/contact">
+                <this.StyledButton className="second-intro" style={{ marginTop: '0px' }}>GET IN CONTACT</this.StyledButton>
+              </Link>
+            </div>
+          </div>
+        </MediaQuery>
+        <div style={{
+          backgroundImage: window.innerWidth > 1223 ? `url(${backgroundSecond})` : `url(${backgroundSecond1})`, width: '100%',
+          height: window.innerWidth > 1223 ? '110vh' : '150vh', backgroundSize: 'cover',
+          textAlign: 'center', paddingTop: window.innerWidth > 1223 ? '24%' : '5%', position: 'relative', display: 'inline-block'
+        }}>
           <Paper elevation={3} style={{ width: '310px', height: '393px', backgroundImage: `url(${cardOne})`, display: 'inline-block', marginRight: '1%', marginBottom: '1%' }} >
             <h2 className="headlines" style={{ paddingTop: '34%', color: "#4a4a49" }}>Губење на вишок килограми</h2>{/*Weight loss */}
             <Box m={2} style={{ fontSize: '18px', fontFamily: 'Open Sans,Arial,sans-serif' }}>
@@ -92,27 +111,21 @@ export default class HomeContainer extends React.Component {
               Промена на лошите навики кон храната со цел целокупно подобрување на начинот на живот. Со заеднички сили до посакуваното здравје и начин на живот.
             </Box>
           </Paper>
-
         </div>
-        <div style={{ backgroundImage: `url(${last})`, width: '100%', height: '42vh', backgroundSize: 'cover', textAlign: 'center', position: 'relative', marginTop: '-1%' }}>
-          <div>
+        <div style={{ backgroundImage: `url(${last})`, width: '100%', backgroundSize: 'cover', textAlign: 'center', position: 'relative', marginTop: '-1%', paddingBottom: '1%' }}>
+          <div style={{ margin: window.innerWidth > 1223 ? '0%' : '4%' }}>
             <h2 className="first-intro" style={{ color: '#4a4a49' }}>Start today!</h2>
-            <div >
-              <h2 className="emails" style={{ color: '#4a4a49' }}>Making a decision is the first step</h2>
-              <h2 className="emails" style={{ color: '#4a4a49' }}>towards change!</h2>
-              <Link to="/contact">
-                <this.StyledButton style={{
-                  marginTop: '0px', fontFamily: 'Montserrat,Helvetica,Arial,Lucida,sans-serif', fontWeight: '500', textTransform: 'uppercase',
-                  fontSize: '21px', letterSpacing: '3px', lineHeight: '1.5em'
-                }}>START THE CHANGE FROM TODAY</this.StyledButton>
-              </Link>
-            </div>
-          </div>
+            <h2 className="emails" style={{ color: '#4a4a49' }}>Making a decision is the first step</h2>
+            <h2 className="emails" style={{ color: '#4a4a49' }}>towards change!</h2>
+            <Link to="/contact">
+              <this.StyledButton style={{
+                marginTop: '0px', fontFamily: 'Montserrat,Helvetica,Arial,Lucida,sans-serif', fontWeight: '500', textTransform: 'uppercase',
+                fontSize: '21px', letterSpacing: '3px', lineHeight: '1.5em'
+              }}>START THE CHANGE NOW</this.StyledButton>
+            </Link>
+          </div >
         </div>
-        <div style={{ height: '30px' }}>
-        </div>
-
-      </div>
+      </div >
     )
   }
 }
