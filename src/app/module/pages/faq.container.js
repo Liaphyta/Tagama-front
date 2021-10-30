@@ -1,7 +1,7 @@
 import { Card, Grid, Paper } from '@material-ui/core';
 import React from 'react';
 import { Navbar } from '../../shared/Navbar';
-import back from '../../../Logo/faq_back.png';
+import back from '../../../Logo/faq_back1.png';
 import MyCard from '../helper/MyCard';
 import './faq.css';
 

@@ -28,7 +28,7 @@ export default class MyCard extends React.Component {
 
         let expanded = this.state.expanded
         return (
-            <Card style={{ padding: '0px' }}>
+            <Card style={{ padding: '0px', backgroundColor: 'rgb(235, 238, 231)' }}>
                 <CardContent style={{ paddingTop: '', padding: '15px 10px 0px 15px', display: 'flex', }}>
                     <Typography variant="body2" style={{ fontFamily: 'Merriweather,Georgia,"Times New Roman",serif', fontWeight: 700, fontSize: '20px', lineHeight: '1.6em' }}>
                         {this.props.carddescription}
