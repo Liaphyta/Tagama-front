@@ -10,6 +10,7 @@ import healthy from '../../../Logo/healthy.jpg'
 import cloud from '../../../Logo/cloud1.png'
 import { Navbar } from '../../shared/Navbar';
 import backgroundMobile from '../../../Logo/mobileBack.png'
+import backgroundMobile1 from '../../../Logo/mobileBack1.png'
 import backgroundFirst from '../../../Logo/background2.png'
 import backgroundSecond from '../../../Logo/background3.png'
 import backgroundSecond1 from '../../../Logo/background4.png'
@@ -63,7 +64,7 @@ export default class HomeContainer extends React.Component {
 
       <div style={{ marginTop: '2%', width: '100%', backgroundColor: 'white' }}>
         <Navbar></Navbar>
-        <MediaQuery minDeviceWidth={1224}>
+        <MediaQuery minDeviceWidth={1000}>
           <div style={{ backgroundImage: `url(${backgroundFirst})`, width: '100%', height: '105vh', backgroundSize: 'cover', textAlign: 'center' }}>
             <div style={{ paddingTop: '12%' }}>
               <h2 className="first-intro" style={{ color: '#4a4a49' }}>Welcome to Tagama</h2>
@@ -75,9 +76,9 @@ export default class HomeContainer extends React.Component {
             </div>
           </div>
         </MediaQuery>
-        <MediaQuery maxDeviceWidth={1224}>
-          <div style={{ backgroundImage: `url(${backgroundMobile})`, width: '100%', height: '105vh', backgroundSize: 'cover', textAlign: 'center' }}>
-            <div style={{ paddingTop: '12%', margin: window.innerWidth > 1223 ? '0%' : '3%' }}>
+        <MediaQuery maxDeviceWidth={1000}>
+          <div style={{ backgroundImage: `url(${backgroundMobile1})`, width: '100%', height: '105vh', backgroundSize: 'cover', textAlign: 'center' }}>
+            <div style={{ paddingTop: '12%', margin: window.innerWidth > 1000 ? '0%' : '3%' }}>
               <h2 className="first-intro" style={{ color: '#4a4a49' }}>Welcome to Tagama</h2>
               <h2 className="first-intro-sub" style={{ color: '#4a4a49' }}>by Tanja Turundzieva</h2>
               <h2 className="second-intro" style={{ color: '#4a4a49' }}>Maintaining healthy habits and positive lifestyle since 1995</h2>
@@ -88,9 +89,9 @@ export default class HomeContainer extends React.Component {
           </div>
         </MediaQuery>
         <div style={{
-          backgroundImage: window.innerWidth > 1223 ? `url(${backgroundSecond})` : `url(${backgroundSecond1})`, width: '100%',
-          height: window.innerWidth > 1223 ? '110vh' : '150vh', backgroundSize: 'cover',
-          textAlign: 'center', paddingTop: window.innerWidth > 1223 ? '24%' : '5%', position: 'relative', display: 'inline-block'
+          backgroundImage: window.innerWidth > 1000 ? `url(${backgroundSecond})` : `url(${backgroundSecond1})`, width: '100%',
+          height: window.innerWidth > 1000 ? '110vh' : '150vh', backgroundSize: 'cover',
+          textAlign: 'center', paddingTop: window.innerWidth > 1000 ? '24%' : '5%', position: 'relative', display: 'inline-block'
         }}>
           <Paper elevation={3} style={{ width: '310px', height: '393px', backgroundImage: `url(${cardOne})`, display: 'inline-block', marginRight: '1%', marginBottom: '1%' }} >
             <h2 className="headlines" style={{ paddingTop: '34%', color: "#4a4a49" }}>Губење на вишок килограми</h2>{/*Weight loss */}
@@ -113,7 +114,7 @@ export default class HomeContainer extends React.Component {
           </Paper>
         </div>
         <div style={{ backgroundImage: `url(${last})`, width: '100%', backgroundSize: 'cover', textAlign: 'center', position: 'relative', marginTop: '-1%', paddingBottom: '1%' }}>
-          <div style={{ margin: window.innerWidth > 1223 ? '0%' : '4%' }}>
+          <div style={{ margin: window.innerWidth > 1000 ? '0%' : '4%' }}>
             <h2 className="first-intro" style={{ color: '#4a4a49' }}>Start today!</h2>
             <h2 className="emails" style={{ color: '#4a4a49' }}>Making a decision is the first step</h2>
             <h2 className="emails" style={{ color: '#4a4a49' }}>towards change!</h2>

@@ -1,6 +1,6 @@
 import { Grid, Paper, Typography, TextField, withStyles, Button } from '@material-ui/core'
 import React from 'react'
-import backgroundPic from '../../../Logo/slika1edit.jpg'
+import backgroundPic from '../../../Logo/background_contact.png'
 import { Navbar } from '../../shared/Navbar';
 import emailjs from 'emailjs-com';
 import './contact.css';
@@ -9,6 +9,10 @@ import { Link } from 'react-router-dom';
 import { CountryDropdown, CountryRegionData } from 'react-country-region-selector';
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/material.css'
+import { styled } from '@material-ui/styles';
+import { LaptopWindowsRounded } from '@material-ui/icons';
+
+
 
 export default class contactContainer extends React.Component {
 
@@ -73,101 +77,137 @@ export default class contactContainer extends React.Component {
       textTransform: 'capitalize',
     },
   })(Button);
-  // StyledButton = withStyles({
-  //     root: {
-  //       background: 'linear-gradient(45deg, #6dce7f 7%, #05481a 96%)',
-  //       borderRadius: 3,
-  //       border: 0,
-  //       color: 'white',
-  //       height: 48,
-  //       padding: '0 30px',
-  //       boxShadow: '0 3px 5px 2px rgba(109,157,99, .9)',
-  //     },
-  //     label: {
-  //       textTransform: 'capitalize',
-  //     },
-  //   })(Button);
 
+  CssTextField = styled(TextField)({
+    '& label.Mui-focused': {
+      color: 'green',
+    },
+    '& .MuiInput-underline:after': {
+      borderBottomColor: 'green',
+    },
+    '& .MuiOutlinedInput-root': {
+      '&:hover fieldset': {
+        borderColor: 'black',
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: 'green',
+      },
+    },
+  });
+
+  PhoneInputNumber = styled(PhoneInput)({
+    "&.react-tel-input .form-control:focus": {
+      borderColor: "#69e781",
+      boxShadow: "0px 0px 0px 1px #69e781",
+    },
+    '& label.Mui-focused': {
+      color: 'green',
+    },
+    '& .MuiInput-underline:after': {
+      borderBottomColor: 'green',
+    },
+    '& .MuiOutlinedInput-root': {
+      '&:hover fieldset': {
+        borderColor: 'black',
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: 'green',
+      },
+    },
+  });
 
   render() {
     return (
-      //dodadi navBar
-      <div style={{ backgroundColor: '#ebeee7' }}>
-        <Navbar></Navbar>
-        <div style={{
-          backgroundImage: `url(${backgroundPic})`, height: '167vh', backgroundRepeat: 'no-repeat', backgroundSize: '90%',
-          textAlign: 'center', marginLeft: '10%', backgroundColor: '#ebeee7'
-        }}>
-          <div style={{ paddingTop: '16%' }}></div>
-          <Paper elevation={0} style={{ height: '50%', width: '50%', marginLeft: '21%', backgroundColor: '#ebeee7' }}>
-            <h1 style={{ color: '#292216', fontSize: '250%' }}>
-              You Want To Start Your Healthy Journey?
-            </h1>
-            <h2 style={{ marginTop: '2px', color: '#292216', }}>
-              Fill out the contact form, send us a message
-              <br></br> and we will contact you for a free consultation.
-            </h2>
-            <TextField
-              id="outlined-secondary"
-              label="Name & Surname"
-              variant="outlined"
-              color='#544f32'
-              style={{ marginTop: '7%', width: '35%' }}
-              onChange={this.handleFormInput('name')}
-              value={this.state.data.name || ''}
-            />
-            <PhoneInput
-              country={'mk'}
-              value={this.state.phone}
-              onChange={phone => this.setState({ phone })}
-              style={{ marginTop: '7%', marginLeft: '3%', width: '35%' }}
-            />
-            {/* <TextField
-              id="outlined-secondary"
-              label="Phone Number"
-              variant="outlined"
-              color='#544f32'
-              style={{ marginTop: '7%', marginLeft: '3%', width: '35%' }}
-              onChange={this.handleFormInput('number')}
-              value={this.state.data.number || ''}
-            /> */}
-            <TextField
-              id="outlined-secondary"
-              label="Email Address"
-              variant="outlined"
-              color='#544f32'
-              style={{ marginTop: '3%', width: '35%' }}
-              onChange={this.handleFormInput('email')}
-              value={this.state.data.email || ''}
-            />
-            <TextField
-              id="outlined-secondary"
-              label="Place of Living"
-              variant="outlined"
-              color='#544f32'
-              style={{ marginTop: '3%', marginLeft: '3%', width: '35%' }}
-              onChange={this.handleFormInput('place')}
-              value={this.state.data.place || ''}
-            />
-            <TextField
+      <Grid container direction="column" align="center" justify="center" alignItems="center" style={{
+        backgroundImage: `url(${backgroundPic})`, height: window.innerWidth > 1000 ? '112vh' : '120vh', backgroundSize: 'cover',
+        textAlign: 'center', marginTop: '5%'
+      }}>
+        <Navbar />
+        <Paper elevation={24} style={{ padding: '2%', backgroundColor: '#ebeee7', textAlign: 'center', marginTop: window.innerWidth < 1001 ? '40%' : '' }}>
+          <h1 style={{ color: '#292216', fontSize: '250%' }}>
+            You Want To Start Your Healthy Journey?
+          </h1>
+          <h2 style={{ marginTop: '2px', color: '#292216', padding: '3%' }}>
+            Fill out the contact form, send us a message
+            <br></br> and we will contact you for a free consultation.
+          </h2>
+          <Grid>
+            <Grid item xs={12} sm={6} style={{ margin: 'auto' }}>
+              <this.CssTextField
+                id="outlined-secondary"
+                label="Name & Surname"
+                variant="outlined"
+                // style={{ marginTop: '7%', width: '35%' }}
+                onChange={this.handleFormInput('name')}
+                value={this.state.data.name || ''}
+                fullWidth={true}
+              />
+            </Grid>
+            <Grid item xs={12} sm={6} style={{ margin: 'auto' }}>
+              <this.CssTextField
+                id="outlined-secondary"
+                label="Phone Number"
+                variant="outlined"
+                color='#544f32'
+                onChange={this.handleFormInput('number')}
+                value={this.state.data.number || ''}
+                inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }}
+                fullWidth={true}
+                style={{ marginTop: '5%' }}
+                type="number"
+              />
+            </Grid>
+          </Grid>
+          <Grid>
+            <Grid item xs={12} sm={6} style={{ margin: 'auto' }}>
+
+              <this.CssTextField
+                id="outlined-secondary"
+                label="Email Address"
+                variant="outlined"
+                color='#544f32'
+                // style={{ marginTop: '3%', width: '35%' }}
+                onChange={this.handleFormInput('email')}
+                value={this.state.data.email || ''}
+                fullWidth={true}
+                style={{ marginTop: '5%' }}
+              />
+            </Grid>
+            <Grid item xs={12} sm={6} style={{ margin: 'auto' }}>
+              <this.CssTextField
+                id="outlined-secondary"
+                label="Place of Living"
+                variant="outlined"
+                color='#544f32'
+                // style={{ marginTop: '3%', marginLeft: '3%', width: '35%' }}
+                onChange={this.handleFormInput('place')}
+                value={this.state.data.place || ''}
+                fullWidth={true}
+                style={{ marginTop: '5%' }}
+              />
+            </Grid>
+          </Grid>
+          <Grid item xs={12} sm={12}>
+            <this.CssTextField
               id="outlined-multiline-static"
               label="Message"
               multiline
               rows={6}
               // defaultValue="Default Value"
-              style={{ width: '73%', marginTop: '3%' }}
+              // style={{ width: '73%', marginTop: '3%' }}
               variant="outlined"
               onChange={this.handleFormInput('message')}
               value={this.state.data.message || ''}
+              fullWidth={true}
+              style={{ marginTop: '5%' }}
             />
-            <br></br>
-            <Link to="/contact/done">
-              <this.StyledButton onClick={this.sendEmail} style={{ marginTop: '3%' }}><b>SEND CONTACT FORM</b></this.StyledButton>
-            </Link>
-          </Paper>
-        </div>
-      </div>
-
+          </Grid>
+          <br></br>
+          <Link to="/contact/done">
+            <this.StyledButton onClick={this.sendEmail} style={{ marginTop: '3%', marginBottom: window.innerWidth < 1001 ? '5%' : '' }}><b>SEND CONTACT FORM</b></this.StyledButton>
+          </Link>
+        </Paper>
+      </Grid >
 
     )
   }

@@ -63,11 +63,10 @@ export default class SimpleDialog extends React.Component {
         <DialogTitle id="alert-dialog-slide-title"><b>{"Thank you!"}</b></DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-slide-description">
-            {console.log("dsadsadsa")}
             We will contact you shortly.
           </DialogContentText>
           <DialogActions>
-            <Link to="/home">
+            <Link to="/">
               <this.StyledButton>
                 Go back
               </this.StyledButton>

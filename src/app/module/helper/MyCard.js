@@ -33,7 +33,7 @@ export default class MyCard extends React.Component {
                     <Typography variant="body2" style={{ fontFamily: 'Merriweather,Georgia,"Times New Roman",serif', fontWeight: 700, fontSize: '20px', lineHeight: '1.6em' }}>
                         {this.props.carddescription}
                     </Typography>
-                    <IconButton style={{ paddingTop: '5px', marginLeft: window.innerWidth > 1223 ? '5%' : '0px' }}
+                    <IconButton style={{ paddingTop: '5px', marginLeft: window.innerWidth > 1000 ? '5%' : '0px' }}
                         onClick={this.handleExpandClick}
                     >
                         <AddIcon style={{ transform: 'scale(1.4)', fill: 'rgba(21,195,154,255)' }} />
