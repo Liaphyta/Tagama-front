@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Tagama-front/static/css/main.638d4542.chunk.css",
-    "main.js": "/Tagama-front/static/js/main.a33028c6.chunk.js",
-    "main.js.map": "/Tagama-front/static/js/main.a33028c6.chunk.js.map",
+    "main.js": "/Tagama-front/static/js/main.cbfd8994.chunk.js",
+    "main.js.map": "/Tagama-front/static/js/main.cbfd8994.chunk.js.map",
     "runtime-main.js": "/Tagama-front/static/js/runtime-main.367514c3.js",
     "runtime-main.js.map": "/Tagama-front/static/js/runtime-main.367514c3.js.map",
     "static/css/2.8dbaaf87.chunk.css": "/Tagama-front/static/css/2.8dbaaf87.chunk.css",
@@ -21,7 +21,7 @@
     "static/media/card2.4822faa4.png": "/Tagama-front/static/media/card2.4822faa4.png",
     "static/media/card3.7838bc91.png": "/Tagama-front/static/media/card3.7838bc91.png",
     "static/media/cloud1.d1562095.png": "/Tagama-front/static/media/cloud1.d1562095.png",
-    "static/media/faq_back.5b10318b.png": "/Tagama-front/static/media/faq_back.5b10318b.png",
+    "static/media/faq_back1.c866ab94.png": "/Tagama-front/static/media/faq_back1.c866ab94.png",
     "static/media/healthy-diet.b94a5c75.jpg": "/Tagama-front/static/media/healthy-diet.b94a5c75.jpg",
     "static/media/healthy.9530642f.jpg": "/Tagama-front/static/media/healthy.9530642f.jpg",
     "static/media/lastBack.1263b533.png": "/Tagama-front/static/media/lastBack.1263b533.png",
@@ -38,6 +38,6 @@
     "static/css/2.8dbaaf87.chunk.css",
     "static/js/2.0a24c3e0.chunk.js",
     "static/css/main.638d4542.chunk.css",
-    "static/js/main.a33028c6.chunk.js"
+    "static/js/main.cbfd8994.chunk.js"
   ]
 }
