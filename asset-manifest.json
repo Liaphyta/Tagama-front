@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Tagama-front/static/css/main.8b58748f.chunk.css",
-    "main.js": "/Tagama-front/static/js/main.dd111999.chunk.js",
-    "main.js.map": "/Tagama-front/static/js/main.dd111999.chunk.js.map",
+    "main.css": "/Tagama-front/static/css/main.09243171.chunk.css",
+    "main.js": "/Tagama-front/static/js/main.077fd318.chunk.js",
+    "main.js.map": "/Tagama-front/static/js/main.077fd318.chunk.js.map",
     "runtime-main.js": "/Tagama-front/static/js/runtime-main.367514c3.js",
     "runtime-main.js.map": "/Tagama-front/static/js/runtime-main.367514c3.js.map",
-    "static/css/2.8dbaaf87.chunk.css": "/Tagama-front/static/css/2.8dbaaf87.chunk.css",
-    "static/js/2.f9bc0c64.chunk.js": "/Tagama-front/static/js/2.f9bc0c64.chunk.js",
-    "static/js/2.f9bc0c64.chunk.js.map": "/Tagama-front/static/js/2.f9bc0c64.chunk.js.map",
+    "static/css/2.7e7ee363.chunk.css": "/Tagama-front/static/css/2.7e7ee363.chunk.css",
+    "static/js/2.4a69d710.chunk.js": "/Tagama-front/static/js/2.4a69d710.chunk.js",
+    "static/js/2.4a69d710.chunk.js.map": "/Tagama-front/static/js/2.4a69d710.chunk.js.map",
     "index.html": "/Tagama-front/index.html",
-    "static/css/2.8dbaaf87.chunk.css.map": "/Tagama-front/static/css/2.8dbaaf87.chunk.css.map",
-    "static/css/main.8b58748f.chunk.css.map": "/Tagama-front/static/css/main.8b58748f.chunk.css.map",
-    "static/js/2.f9bc0c64.chunk.js.LICENSE.txt": "/Tagama-front/static/js/2.f9bc0c64.chunk.js.LICENSE.txt",
+    "static/css/2.7e7ee363.chunk.css.map": "/Tagama-front/static/css/2.7e7ee363.chunk.css.map",
+    "static/css/main.09243171.chunk.css.map": "/Tagama-front/static/css/main.09243171.chunk.css.map",
+    "static/js/2.4a69d710.chunk.js.LICENSE.txt": "/Tagama-front/static/js/2.4a69d710.chunk.js.LICENSE.txt",
     "static/media/about_us_pic.cde96a2d.jpg": "/Tagama-front/static/media/about_us_pic.cde96a2d.jpg",
     "static/media/back.d9d7b3ca.png": "/Tagama-front/static/media/back.d9d7b3ca.png",
     "static/media/background2.4d28ca75.png": "/Tagama-front/static/media/background2.4d28ca75.png",
@@ -36,9 +36,9 @@
   },
   "entrypoints": [
     "static/js/runtime-main.367514c3.js",
-    "static/css/2.8dbaaf87.chunk.css",
-    "static/js/2.f9bc0c64.chunk.js",
-    "static/css/main.8b58748f.chunk.css",
-    "static/js/main.dd111999.chunk.js"
+    "static/css/2.7e7ee363.chunk.css",
+    "static/js/2.4a69d710.chunk.js",
+    "static/css/main.09243171.chunk.css",
+    "static/js/main.077fd318.chunk.js"
   ]
 }
