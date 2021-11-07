@@ -11,7 +11,7 @@ export default class faqContainer extends React.Component {
     render() {
         return (
             <Grid direction="column" align="center" justify="center" alignItems="center" container
-                style={{ textAlign: 'center', width: "100%", minHeight: '110vh', backgroundImage: `url(${back})`, backgroundSize: 'cover', marginTop: '5%', paddingRight: '-10px', display: 'inline-block' }} spacing={2}>
+                style={{ textAlign: 'center', width: "100%", minHeight: '110vh', backgroundImage: `url(${back})`, backgroundAttachment: 'fixed', backgroundSize: 'cover', marginTop: '5%', paddingRight: '-10px', display: 'inline-block' }} spacing={2}>
                 <Navbar></Navbar>
                 <Grid item>
                     <h2 style={{ fontFamily: 'Merriweather,Georgia,"Times New Roman",serif', fontWeight: 700, fontSize: '40px', lineHeight: '1.6em', marginBottom: '0px' }}>Frequently Asked Questions </h2>

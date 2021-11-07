@@ -4,13 +4,18 @@ import backgroundPic from '../../../Logo/background_contact.png'
 import { Navbar } from '../../shared/Navbar';
 import emailjs from 'emailjs-com';
 import './contact.css';
-import { Redirect } from 'react-router';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { CountryDropdown, CountryRegionData } from 'react-country-region-selector';
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/material.css'
 import { styled } from '@material-ui/styles';
 import { LaptopWindowsRounded } from '@material-ui/icons';
+import ReactPhoneInput from 'react-phone-input-material-ui';
+import 'react-phone-input-material-ui/lib/material.css';
+import PhoneNumber from '../pages/PhoneNumber';
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
+
 
 
 
@@ -20,10 +25,28 @@ export default class contactContainer extends React.Component {
     super(props)
     this.state = {
       formdata: {},
-      data: {}
+      data: {},
+      snackbarOpen: false,
     }
   }
-
+  checkAllFields = () => {
+    let allFields = false;
+    if (this.state.data.name != undefined && this.state.data.name != '' && this.state.phone != undefined && this.state.phone != ''
+      && this.state.data.email != undefined && this.state.data.email != '' && this.state.data.place != undefined && this.state.data.place != ''
+      && this.state.data.message != undefined && this.state.data.message != '') {
+      allFields = true;
+    }
+    console.log(this.state.data.name);
+    console.log(this.state.phone);
+    console.log(this.state.data.email);
+    console.log(this.state.data.place);
+    console.log(this.state.data.message);
+    console.log(allFields);
+    return allFields;
+  }
+  handleCloseSnackbar = () => {
+    this.setState({ snackbarOpen: false });
+  }
   selectCountry(val) {
     var formdata = this.state.data;
     formdata["country"] = val;
@@ -39,19 +62,28 @@ export default class contactContainer extends React.Component {
     });
   }
   sendEmail = () => {
+    var condition = this.checkAllFields();
     const templateParams = {
       name: this.state.data.name,
-      number: this.state.data.number,
+      number: this.state.phone,
       email: this.state.data.email,
       place: this.state.data.place,
       message: this.state.data.message
     };
-    emailjs.send('service_2hxvcm6', 'template_bmy29ke', templateParams, 'user_xKoRQkVDVTUKokzzNiLy9')
-      .then((response) => {
-        console.log('SUCCESS!', response.status, response.text);
-      }, (err) => {
-        console.log('FAILED...', err);
-      });
+    if (condition) {
+      emailjs.send('service_2hxvcm6', 'template_bmy29ke', templateParams, 'user_xKoRQkVDVTUKokzzNiLy9')
+        .then((response) => {
+          console.log('SUCCESS!', response.status, response.text);
+        }, (err) => {
+          console.log('FAILED...', err);
+        });
+      window.location.href = "/contact/done";
+    }
+    else {
+      console.log("VLAGA VO ELSE");
+      this.setState({ snackbarOpen: true });
+    }
+
   }
   StyledButton = withStyles({
     root: {
@@ -115,6 +147,12 @@ export default class contactContainer extends React.Component {
       },
     },
   });
+  borderClass = {
+    "&.react-tel-input .form-control:focus": {
+      borderColor: "#69e781",
+      boxShadow: "0px 0px 0px 1px #69e781",
+    }
+  }
 
   render() {
     return (
@@ -141,9 +179,10 @@ export default class contactContainer extends React.Component {
                 onChange={this.handleFormInput('name')}
                 value={this.state.data.name || ''}
                 fullWidth={true}
+                required
               />
             </Grid>
-            <Grid item xs={12} sm={6} style={{ margin: 'auto' }}>
+            {/* <Grid item xs={12} sm={6} style={{ margin: 'auto' }}>
               <this.CssTextField
                 id="outlined-secondary"
                 label="Phone Number"
@@ -155,12 +194,24 @@ export default class contactContainer extends React.Component {
                 fullWidth={true}
                 style={{ marginTop: '5%' }}
                 type="number"
+                required
+              />
+            </Grid> */}
+            <Grid item xs={12} sm={6} style={{ margin: 'auto' }}>
+              <this.PhoneInputNumber
+                specialLabel=""
+                inputStyle={{ backgroundColor: '#ebeee7' }}
+                country={'mk'}
+                containerStyle={{ borderColor: 'green', boxShadow: '0px 0px 0px 1px green' }}
+                value={this.state.phone}
+                onChange={phone => this.setState({ phone })}
+                style={{ marginTop: '5%' }}
+                required
               />
             </Grid>
           </Grid>
           <Grid>
             <Grid item xs={12} sm={6} style={{ margin: 'auto' }}>
-
               <this.CssTextField
                 id="outlined-secondary"
                 label="Email Address"
@@ -171,6 +222,7 @@ export default class contactContainer extends React.Component {
                 value={this.state.data.email || ''}
                 fullWidth={true}
                 style={{ marginTop: '5%' }}
+                required
               />
             </Grid>
             <Grid item xs={12} sm={6} style={{ margin: 'auto' }}>
@@ -184,6 +236,7 @@ export default class contactContainer extends React.Component {
                 value={this.state.data.place || ''}
                 fullWidth={true}
                 style={{ marginTop: '5%' }}
+                required
               />
             </Grid>
           </Grid>
@@ -193,20 +246,30 @@ export default class contactContainer extends React.Component {
               label="Message"
               multiline
               rows={6}
-              // defaultValue="Default Value"
-              // style={{ width: '73%', marginTop: '3%' }}
               variant="outlined"
               onChange={this.handleFormInput('message')}
               value={this.state.data.message || ''}
               fullWidth={true}
               style={{ marginTop: '5%' }}
+              required
             />
           </Grid>
           <br></br>
-          <Link to="/contact/done">
-            <this.StyledButton onClick={this.sendEmail} style={{ marginTop: '3%', marginBottom: window.innerWidth < 1001 ? '5%' : '' }}><b>SEND CONTACT FORM</b></this.StyledButton>
-          </Link>
+          {/* <Link to="/contact/done"> */}
+          <this.StyledButton onClick={this.sendEmail} style={{ marginTop: '3%', marginBottom: window.innerWidth < 1001 ? '5%' : '' }}><b>SEND CONTACT FORM</b></this.StyledButton>
+          {/* </Link> */}
         </Paper>
+        <Snackbar
+          anchorOrigin={{
+            vertical: 'top',
+            horizontal: 'center',
+          }}
+          onClose={this.handleCloseSnackbar}
+          open={this.state.snackbarOpen}
+          autoHideDuration={6000}
+        >
+          <MuiAlert elevation={6} severity="error" variant="filled"> Please fill all required fields.</MuiAlert>
+        </Snackbar>
       </Grid >
 
     )
