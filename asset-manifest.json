@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Tagama-front/static/css/main.09243171.chunk.css",
-    "main.js": "/Tagama-front/static/js/main.d2143f57.chunk.js",
-    "main.js.map": "/Tagama-front/static/js/main.d2143f57.chunk.js.map",
+    "main.js": "/Tagama-front/static/js/main.39100b4d.chunk.js",
+    "main.js.map": "/Tagama-front/static/js/main.39100b4d.chunk.js.map",
     "runtime-main.js": "/Tagama-front/static/js/runtime-main.367514c3.js",
     "runtime-main.js.map": "/Tagama-front/static/js/runtime-main.367514c3.js.map",
     "static/css/2.7e7ee363.chunk.css": "/Tagama-front/static/css/2.7e7ee363.chunk.css",
@@ -39,6 +39,6 @@
     "static/css/2.7e7ee363.chunk.css",
     "static/js/2.c90d5063.chunk.js",
     "static/css/main.09243171.chunk.css",
-    "static/js/main.d2143f57.chunk.js"
+    "static/js/main.39100b4d.chunk.js"
   ]
 }
