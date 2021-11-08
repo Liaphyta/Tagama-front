@@ -6,6 +6,7 @@ import { AppBar, Toolbar, Typography, } from "@material-ui/core";
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
+import CallIcon from '@material-ui/icons/Call';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import MediaQuery from 'react-responsive';
@@ -59,17 +60,21 @@ export function Navbar(props) {
                             </a>
                         </IconButton>
                         <IconButton
-
                         >
                             <a href="https://www.instagram.com/tagamatanja" style={{ color: 'inherit' }}>
                                 <InstagramIcon />
                             </a>
                         </IconButton>
                         <IconButton
-
                         >
                             <a href={"mailto:" + "tagama4@yahoo.com"} style={{ color: 'inherit' }}>
                                 <MailOutlineIcon />
+                            </a>
+                        </IconButton>
+                        <IconButton
+                        >
+                            <a href="tel:+38970332752" style={{ color: 'inherit' }}>
+                                <CallIcon />
                             </a>
                         </IconButton>
                         <a href="tel:+38970332752" style={{ fontSize: '120%', color: '#6c6d6a' }}>+38970332752</a>
