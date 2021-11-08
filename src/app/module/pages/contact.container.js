@@ -15,11 +15,12 @@ import 'react-phone-input-material-ui/lib/material.css';
 import PhoneNumber from '../pages/PhoneNumber';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
+import { withRouter } from 'react-router-dom'
 
 
 
 
-export default class contactContainer extends React.Component {
+class contactContainer extends React.Component {
 
   constructor(props) {
     super(props)
@@ -275,4 +276,4 @@ export default class contactContainer extends React.Component {
     )
   }
 
-}
+} export default withRouter(contactContainer)
