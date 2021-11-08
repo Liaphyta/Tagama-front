@@ -78,7 +78,7 @@ class contactContainer extends React.Component {
         }, (err) => {
           console.log('FAILED...', err);
         });
-      window.location.href = "/contact/done";
+      this.props.history.push('/contact/done')
     }
     else {
       console.log("VLAGA VO ELSE");
