@@ -31,18 +31,22 @@ class contactContainer extends React.Component {
     }
   }
   checkAllFields = () => {
-    let allFields = false;
+    var allFields = false;
     if (this.state.data.name != undefined && this.state.data.name != '' && this.state.phone != undefined && this.state.phone != ''
       && this.state.data.email != undefined && this.state.data.email != '' && this.state.data.place != undefined && this.state.data.place != ''
-      && this.state.data.message != undefined && this.state.data.message != '') {
+      && this.state.data.message != undefined && this.state.data.message != '' && this.ValidateEmail(this.state.data.email)) {
       allFields = true;
+    }
+    else {
+      this.setState({ allFieldsError: false });
     }
     console.log(this.state.data.name);
     console.log(this.state.phone);
     console.log(this.state.data.email);
     console.log(this.state.data.place);
     console.log(this.state.data.message);
-    console.log(allFields);
+    console.log(this.state.allFields);
+    console.log(this.ValidateEmail(this.state.data.email))
     return allFields;
   }
   handleCloseSnackbar = () => {
@@ -55,12 +59,29 @@ class contactContainer extends React.Component {
       data: formdata
     });
   }
+  ValidateEmail = (email) => {
+    console.log("VLAGA VO EMAIL")
+    if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))) {
+
+      console.log("VLAGA VO EMAIL NE E")
+      this.setState({ email: false });
+      return false;
+    }
+    else {
+      this.setState({ email: true });
+      return true;
+    }
+
+  }
   handleFormInput = name => event => {
     var formdata = this.state.data;
     formdata[name] = event.target.value;
     this.setState({
       data: formdata
     });
+    if (name == 'email') {
+      this.ValidateEmail(this.state.data.email)
+    }
   }
   sendEmail = () => {
     var condition = this.checkAllFields();
@@ -71,6 +92,9 @@ class contactContainer extends React.Component {
       place: this.state.data.place,
       message: this.state.data.message
     };
+    console.log(((this.state.data.email === "" || this.state.data.email === undefined) && this.state.allFieldsError == false) || this.state.email === false)
+    console.log(this.state.email)
+    console.log(this.state.email === false)
     if (condition) {
       emailjs.send('service_2hxvcm6', 'template_bmy29ke', templateParams, 'user_xKoRQkVDVTUKokzzNiLy9')
         .then((response) => {
@@ -181,6 +205,8 @@ class contactContainer extends React.Component {
                 value={this.state.data.name || ''}
                 fullWidth={true}
                 required
+                error={((this.state.data.name === "" || this.state.data.name === undefined) && this.state.allFieldsError == false)}
+                helperText={((this.state.data.name === "" || this.state.data.name === undefined) && this.state.allFieldsError == false) ? 'Empty field.' : ''}
               />
             </Grid>
             {/* <Grid item xs={12} sm={6} style={{ margin: 'auto' }}>
@@ -208,6 +234,8 @@ class contactContainer extends React.Component {
                 onChange={phone => this.setState({ phone })}
                 style={{ marginTop: '5%' }}
                 required
+                error={((this.state.phone === "" || this.state.phone === undefined) && this.state.allFieldsError == false)}
+                helperText={((this.state.phone === "" || this.state.phone === undefined) && this.state.allFieldsError == false) ? 'Empty field.' : ''}
               />
             </Grid>
           </Grid>
@@ -224,6 +252,8 @@ class contactContainer extends React.Component {
                 fullWidth={true}
                 style={{ marginTop: '5%' }}
                 required
+                error={((this.state.data.email === "" || this.state.data.email === undefined) && this.state.allFieldsError == false) || this.state.email === false}
+                helperText={((this.state.data.email === "" || this.state.data.email === undefined) && this.state.allFieldsError == false) || this.state.email === false ? 'Email address not valid.' : ''}
               />
             </Grid>
             <Grid item xs={12} sm={6} style={{ margin: 'auto' }}>
@@ -238,6 +268,8 @@ class contactContainer extends React.Component {
                 fullWidth={true}
                 style={{ marginTop: '5%' }}
                 required
+                error={((this.state.data.place === "" || this.state.data.place === undefined) && this.state.allFieldsError == false)}
+                helperText={((this.state.data.place === "" || this.state.data.place === undefined) && this.state.allFieldsError == false) ? 'Empty field.' : ''}
               />
             </Grid>
           </Grid>
@@ -253,6 +285,8 @@ class contactContainer extends React.Component {
               fullWidth={true}
               style={{ marginTop: '5%' }}
               required
+              error={((this.state.data.message === "" || this.state.data.message === undefined) && this.state.allFieldsError == false)}
+              helperText={((this.state.data.message === "" || this.state.data.message === undefined) && this.state.allFieldsError == false) ? 'Empty field.' : ''}
             />
           </Grid>
           <br></br>
